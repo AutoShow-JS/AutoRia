@@ -8,6 +8,46 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="page">
+      <div class="filters">
+            <span>ЦІНА, ГРН</span>
+            <div class="price-inp">
+                <input type="range" id="price-range" name="range"
+                min="0" max="50000" value="0" onchange="FilterPrice()" oninput="ChangeLabel()">
+                <label for="range" id="range-label">0</label>
+            </div>
+            <hr>
+            <div>
+                <div class="checks">
+                    <input type="checkbox" id="auto"></input>
+                    <label>Автомат</label>
+                </div>
+                <div class="checks">
+                    <input type="checkbox" id="mechanics"></input>
+                    <label>Механіка</label>
+                </div>
+            </div>
+            <hr>
+      </div>
+
+      <div class="grid">
+        <div class="car">
+          <span>First</span>
+          <span class="price">1000</span>
+        </div>
+        <div class="car">
+          <span>Second</span>
+          <span class="price">1530</span>
+        </div>
+        <div class="car">
+          <span>Third</span>
+          <span class="price">2000</span>
+        </div>
+      </div>
+
+
+
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
