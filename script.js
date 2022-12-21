@@ -1,8 +1,9 @@
 var apiKey = "OeyqbA5bhCQHbHfjVsYjRsudRopUIJymPkoJ8RRe";
 var idArray = [];
 
-window.onload = () => {
-  RequestCarsId();
+window.onload = async () => {
+  await RequestCarsId();
+  await RequestCarsById();
 };
 
 //получаем id машин
@@ -12,11 +13,29 @@ async function RequestCarsId() {
   await fetch(searchUrl, {
     method: "GET",
   })
-    .then(function (response) {
+    .then(async function (response) {
       return response.json();
     })
     .then(function (result) {
       idArray = result.result.search_result.ids;
-      console.log(idArray);
+      console.log(result);
     });
+}
+
+//получаем инфу о машинах по id
+async function RequestCarsById() {
+    
+  //idArray.forEach(async (element) => {
+  let infoUrl = `https://developers.ria.com/auto/info?api_key=${apiKey}&auto_id=${idArray[0]}`;
+
+  await fetch(infoUrl, {
+    method: "GET",
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (result) {
+      console.log(result);
+    });
+  //});
 }
