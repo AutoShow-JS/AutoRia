@@ -112,6 +112,9 @@ function Init(){
       div_contentBx.appendChild(a);
       a.href = "#";
       a.innerText = "Buy now";
+      a.onclick = function(e){
+        e.target.parentElement.parentElement.parentElement.remove();
+      }
   }); 
 }
 //получаем id машин
