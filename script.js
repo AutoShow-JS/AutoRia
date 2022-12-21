@@ -61,5 +61,30 @@ function FilterPrice() {
         price[index].parentElement.style = "display: none;";
       }
     }
+  } else {
+    for (let index = 0; index < price.length; index++) {
+      price[index].parentElement.style = "display: block;";
+    }
+  }
+}
+
+//фільтр за моделлю
+function FilterModel() {
+  let model = document.getElementsByClassName("model");
+  let searchInput = document.getElementById("model-input").value;
+  if (searchInput != "") {
+    for (let index = 0; index < model.length; index++) {
+      if (
+        model[index].innerHTML.toLowerCase().includes(searchInput.toLowerCase())
+      ) {
+        model[index].parentElement.style = "display: flex;";
+      } else {
+        model[index].parentElement.style = "display: none;";
+      }
+    }
+  } else {
+    for (let index = 0; index < model.length; index++) {
+      model[index].parentElement.style = "display: block;";
+    }
   }
 }

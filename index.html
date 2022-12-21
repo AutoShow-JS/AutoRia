@@ -10,8 +10,13 @@
   <body>
     <div class="page">
       <div class="filters">
+        <span>Модель</span>
+          <div>
+            <input type="text" id="model-input" oninput="FilterModel()"></input>
+          </div>
+          <hr>
             <span>ЦІНА, ГРН</span>
-            <div class="price-inp">
+            <div>
                 <input type="range" id="price-range" name="range"
                 min="0" max="50000" value="0" onchange="FilterPrice()" oninput="ChangeLabel()">
                 <label for="range" id="range-label">0</label>
@@ -34,14 +39,17 @@
         <div class="car">
           <span>First</span>
           <span class="price">1000</span>
+          <span class="model">dswf</span>
         </div>
         <div class="car">
           <span>Second</span>
           <span class="price">1530</span>
+          <span class="model">aadef</span>
         </div>
         <div class="car">
           <span>Third</span>
           <span class="price">2000</span>
+          <span class="model">r3 32f</span>
         </div>
       </div>
 
