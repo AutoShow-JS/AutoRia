@@ -1,46 +1,50 @@
-var apiKey = "OeyqbA5bhCQHbHfjVsYjRsudRopUIJymPkoJ8RRe";
+var apiKey = "kxBcXJKhCrmQHLck7hkmT5HuKjPReDajM9h5yTJx";
+var user_id = '9684073';
 var idArray = [];
-var cars = [];
-
+var carsForApi = [];
+var cars=[];
 window.onload = async () => {
   SetMaxLabel();
-  // await RequestCarsId(0);
-  // await RequestCarsById();
+
+   //await RequestCarsId();
+   //await RequestCarsById();
 };
-
+//Added cards 
 //получаем id машин
-// async function RequestCarsId() {
-//   let searchUrl = `https://developers.ria.com/auto/search?api_key=${apiKey}&category_id=1&marka_id=28&with_photo=1`;
+ async function RequestCarsId() {
+   let searchUrl = `https://developers.ria.com/auto/search?api_key=${apiKey}&category_id=1&marka_id=28&with_photo=1`;
 
-//   await fetch(searchUrl, {
-//     method: "GET",
-//   })
-//     .then(async function (response) {
-//       return response.json();
-//     })
-//     .then(function (result) {
-//       idArray = result.result.search_result.ids;
-//       //console.log(result);
-//     });
-// }
+   await fetch(searchUrl, {
+      method: "GET",
+      mode:'cors',
+      headers: { 'Content-Type' : 'application/json'}
+    })
+     .then(async function (response) {
+       return response.json();
+     })
+     .then(function (result) {
+       idArray = result.result.search_result.ids;
+       console.log(result);
+     });
+     console.log(idArray);
+ }
 
 //получаем инфу о машинах по id
-// async function RequestCarsById() {
-//   idArray.forEach(async (element) => {
-//     let infoUrl = `https://developers.ria.com/auto/info?api_key=${apiKey}&auto_id=${element}`;
+ async function RequestCarsById() {
+   
+     let infoUrl = `https://developers.ria.com/auto/used/autos/?user_id=${user_id}&api_key=${apiKey}`;
 
-//     await fetch(infoUrl, {
-//       method: "GET",
-//     })
-//       .then(async function (response) {
-//         return await response.json();
-//       })
-//       .then(function (result) {
-//         cars.push(result);
-//         console.log(cars);
-//       });
-//   });
-// }
+     await fetch(infoUrl, {
+      method: "GET",
+    })
+       .then(async function (response) {
+         return await response.json();
+       })
+      .then(function (result) {
+         cars.push(result);
+          console.log(cars);
+      });
+}
 //Set max range label
 function SetMaxLabel(){
   var max_range = document.getElementById('max-range-label');
