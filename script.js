@@ -1,54 +1,55 @@
 var apiKey = "kxBcXJKhCrmQHLck7hkmT5HuKjPReDajM9h5yTJx";
-var user_id = '9684073';
+var user_id = "9684073";
 var idArray = [];
 var carsForApi = [];
-var cars=[];
+var cars = [];
 window.onload = async () => {
   SetMaxLabel();
 
-   //await RequestCarsId();
-   //await RequestCarsById();
+  //await RequestCarsId();
+  //await RequestCarsById();
 };
-//Added cards 
+//Added cards
 //получаем id машин
- async function RequestCarsId() {
-   let searchUrl = `https://developers.ria.com/auto/search?api_key=${apiKey}&category_id=1&marka_id=28&with_photo=1`;
+//  async function RequestCarsId() {
+//    let searchUrl = `https://developers.ria.com/auto/search?api_key=${apiKey}&category_id=1&marka_id=28&with_photo=1`;
 
-   await fetch(searchUrl, {
-      method: "GET",
-      mode:'cors',
-      headers: { 'Content-Type' : 'application/json'}
-    })
-     .then(async function (response) {
-       return response.json();
-     })
-     .then(function (result) {
-       idArray = result.result.search_result.ids;
-       console.log(result);
-     });
-     console.log(idArray);
- }
+//    await fetch(searchUrl, {
+//       method: "GET",
+//       mode:'cors',
+//       headers: { 'Content-Type' : 'application/json'}
+//     })
+//      .then(async function (response) {
+//        return response.json();
+//      })
+//      .then(function (result) {
+//        idArray = result.result.search_result.ids;
+//        console.log(result);
+//      });
+//      console.log(idArray);
+//}
 
 //получаем инфу о машинах по id
- async function RequestCarsById() {
-   
-     let infoUrl = `https://developers.ria.com/auto/used/autos/?user_id=${user_id}&api_key=${apiKey}`;
+//  async function RequestCarsById() {
 
-     await fetch(infoUrl, {
-      method: "GET",
-    })
-       .then(async function (response) {
-         return await response.json();
-       })
-      .then(function (result) {
-         cars.push(result);
-          console.log(cars);
-      });
-}
+//      let infoUrl = `https://developers.ria.com/auto/used/autos/?user_id=${user_id}&api_key=${apiKey}`;
+
+//      await fetch(infoUrl, {
+//       method: "GET",
+//     })
+//        .then(async function (response) {
+//          return await response.json();
+//        })
+//       .then(function (result) {
+//          cars.push(result);
+//           console.log(cars);
+//       });
+// }
+
 //Set max range label
-function SetMaxLabel(){
-  var max_range = document.getElementById('max-range-label');
-  max_range.innerText = document.getElementById('price-range').max;
+function SetMaxLabel() {
+  var max_range = document.getElementById("max-range-label");
+  max_range.innerText = document.getElementById("price-range").max;
 }
 //фільтр за ціною
 function ChangeLabel() {
@@ -61,16 +62,28 @@ function FilterPrice() {
 
   if (range.value != 0) {
     for (let index = 0; index < price.length; index++) {
-      if (parseInt(price[index].innerHTML) >= range.value && parseInt(price[index].innerHTML) <= range.max) {
+      if (
+        parseInt(price[index].innerHTML) >= range.value &&
+        parseInt(price[index].innerHTML) <= range.max
+      ) {
         console.log(price[index].innerHTML);
-        price[index].parentElement.parentElement.parentElement.style = "display: block;";
+        price[
+          index
+        ].parentElement.parentElement.parentElement.parentElement.style =
+          "display: block;";
       } else {
-        price[index].parentElement.parentElement.parentElement.style = "display: none;";
+        price[
+          index
+        ].parentElement.parentElement.parentElement.parentElement.style =
+          "display: none;";
       }
     }
   } else {
     for (let index = 0; index < price.length; index++) {
-      price[index].parentElement.parentElement.parentElement.style = "display: block;";
+      price[
+        index
+      ].parentElement.parentElement.parentElement.parentElement.style =
+        "display: block;";
     }
   }
 }
@@ -83,18 +96,63 @@ function FilterModel() {
 
   if (searchInput != "") {
     for (let index = 0; index < model.length; index++) {
-      if (model[index].innerHTML.toLowerCase().includes(searchInput.toLowerCase())) 
-      {
-        model[index].parentElement.parentElement.parentElement.style.display = 'block';
-      } 
-      else 
-      {
-        model[index].parentElement.parentElement.parentElement.style.display = 'none';
+      if (
+        model[index].innerHTML.toLowerCase().includes(searchInput.toLowerCase())
+      ) {
+        model[index].parentElement.parentElement.parentElement.style.display =
+          "block";
+      } else {
+        model[index].parentElement.parentElement.parentElement.style.display =
+          "none";
       }
     }
   } else {
     for (let index = 0; index < model.length; index++) {
-      model[index].parentElement.parentElement.parentElement.style.display = "block";
+      model[index].parentElement.parentElement.parentElement.style.display =
+        "block";
+    }
+  }
+}
+
+//фільтр типу
+function FilterGirbox() {
+  let type = document.getElementsByClassName("typeTransmission");
+  let autoBox = document.getElementById("auto").checked;
+  let mechanicsBox = document.getElementById("mechanics").checked;
+
+  if (autoBox || mechanicsBox) {
+    for (let index = 0; index < type.length; index++) {
+      if (autoBox && type[index].innerHTML.toLowerCase().includes("auto")) {
+        type[
+          index
+        ].parentElement.parentElement.parentElement.parentElement.style.display =
+          "block";
+      } else if (
+        mechanicsBox &&
+        type[index].innerHTML.toLowerCase().includes("manual")
+      ) {
+        type[
+          index
+        ].parentElement.parentElement.parentElement.parentElement.style.display =
+          "block";
+      } else if (mechanicsBox && autoBox) {
+        type[
+          index
+        ].parentElement.parentElement.parentElement.parentElement.style.display =
+          "block";
+      } else {
+        type[
+          index
+        ].parentElement.parentElement.parentElement.parentElement.style.display =
+          "none";
+      }
+    }
+  } else {
+    for (let index = 0; index < type.length; index++) {
+      type[
+        index
+      ].parentElement.parentElement.parentElement.parentElement.style.display =
+        "block";
     }
   }
 }
