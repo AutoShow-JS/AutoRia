@@ -19,7 +19,7 @@
 .sp{
     color: "red";
 }
-.grid{
+#grid{
     margin-left: 30%;
     width: 80%;
     display: grid;

@@ -35,7 +35,7 @@
 }
 
 .container .card:after{
-  content: 'Mercedes';
+  content: 'Auto Ria';
   position: absolute;
   top: 60%;
   font-size: 4em;
