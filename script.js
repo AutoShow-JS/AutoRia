@@ -18,38 +18,38 @@ const EngineType = {
 var cars=[
   {manufacture:"Honda",
   model:"eNS1 Dynamic" , 
-  price:"25000" , 
+  price:"31690" , 
+  gearBox:1 , 
+  engine:3 ,
+  img:"source/img/honda_ens1.png"},
+
+  {manufacture:"Honda",
+  model:"CR-V 2010" , 
+  price:"10699 " , 
+  gearBox:1 , 
+  engine:1 ,
+  img:"source/img/honda_cr-v.png"},
+
+  {manufacture:"Honda",
+  model:"CR-V 2014" , 
+  price:"16100" , 
+  gearBox:1 , 
+  engine:1 ,
+  img:"source/img/honda_cr-v2014.png"},
+
+  {manufacture:"Honda",
+  model:"CR-V 2007" , 
+  price:"10699" , 
   gearBox:2 , 
   engine:1 ,
-  img:"source/img/mercedes-amg-gt.png"},
+  img:"source/img/honda_cr-v-2007bx.png"},
 
-  {manufacture:"Mercedes",
-  model:"AMG GT" , 
-  price:"25000" , 
+  {manufacture:"Honda ",
+  model:"M-NV PREMIUM 2022" , 
+  price:"26500 " , 
   gearBox:1 , 
-  engine:1 ,
-  img:"source/img/mercedes-amg-gt.png"},
-
-  {manufacture:"Mercedes",
-  model:"AMG GT" , 
-  price:"25000" , 
-  gearBox:1 , 
-  engine:1 ,
-  img:"source/img/mercedes-amg-gt.png"},
-
-  {manufacture:"Mercedes",
-  model:"AMG GT" , 
-  price:"25000" , 
-  gearBox:1 , 
-  engine:1 ,
-  img:"source/img/mercedes-amg-gt.png"},
-
-  {manufacture:"Mercedes",
-  model:"AMG GT" , 
-  price:"25000" , 
-  gearBox:1 , 
-  engine:1 ,
-  img:"source/img/mercedes-amg-gt.png"}
+  engine:3 ,
+  img:"source/img/honda_m-nv2022bx.png"}
 ];
 window.onload = async () => {
   SetMaxLabel();
@@ -220,7 +220,7 @@ function FilterModel() {
 
 //фільтр типу
 function FilterGirbox() {
-  let type = document.getElementsByClassName("typeTransmission");
+  let type = document.getElementsByClassName("typegearbox");
   let autoBox = document.getElementById("auto").checked;
   let mechanicsBox = document.getElementById("mechanics").checked;
 
