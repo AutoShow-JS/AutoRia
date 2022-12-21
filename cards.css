@@ -5,21 +5,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #131313;
-}
-
 .container{
   position: relative;
 }
 
 .container .card{
   position: relative;
-  width: 320px;
+  width: 280px;
   height: 450px;
   background: #232323;
   border-radius: 20px;

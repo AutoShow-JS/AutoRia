@@ -4,27 +4,26 @@
 }
 .filters{
     width: 20%;
+    margin-top: 20%;
+    margin-left: -70%;
     border: 1px solid black;
     border-radius: 10px;
     padding: 1% 3% 1% 3%;
+    height: min-content;
+    position: fixed;
 }
 .filter-inp{
     width: 30%;
+
 }
 .sp{
     color: "red";
 }
-
 .grid{
+    margin-left: 30%;
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-.car{
-    border: 1px solid black;
-    border-radius: 10px;
-    height: min-content;
-    padding: 1% 3% 1% 3%;
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    row-gap: 3rem;
 }
