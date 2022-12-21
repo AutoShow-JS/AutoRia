@@ -30,7 +30,6 @@
 
 #price-range , #range_labels{
     width: 80%;
-    margin-left: 10%;
 }
 #range_labels{
     display: flex;
