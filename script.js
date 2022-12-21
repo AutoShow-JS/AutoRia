@@ -3,6 +3,7 @@ var idArray = [];
 var cars = [];
 
 window.onload = async () => {
+  SetMaxLabel();
   // await RequestCarsId(0);
   // await RequestCarsById();
 };
@@ -40,7 +41,11 @@ window.onload = async () => {
 //       });
 //   });
 // }
-
+//Set max range label
+function SetMaxLabel(){
+  var max_range = document.getElementById('max-range-label');
+  max_range.innerText = document.getElementById('price-range').max;
+}
 //фільтр за ціною
 function ChangeLabel() {
   let range = document.getElementById("price-range");
@@ -52,18 +57,16 @@ function FilterPrice() {
 
   if (range.value != 0) {
     for (let index = 0; index < price.length; index++) {
-      if (
-        parseInt(price[index].innerHTML) >= range.value &&
-        parseInt(price[index].innerHTML) <= range.max
-      ) {
-        price[index].parentElement.style = "display: flex;";
+      if (parseInt(price[index].innerHTML) >= range.value && parseInt(price[index].innerHTML) <= range.max) {
+        console.log(price[index].innerHTML);
+        price[index].parentElement.parentElement.parentElement.style = "display: block;";
       } else {
-        price[index].parentElement.style = "display: none;";
+        price[index].parentElement.parentElement.parentElement.style = "display: none;";
       }
     }
   } else {
     for (let index = 0; index < price.length; index++) {
-      price[index].parentElement.style = "display: block;";
+      price[index].parentElement.parentElement.parentElement.style = "display: block;";
     }
   }
 }

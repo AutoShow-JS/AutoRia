@@ -14,13 +14,18 @@
         <span>Модель</span>
           <div>
             <input type="text" id="model-input" oninput="FilterModel()"></input>
-          </div>
+          </div>  
           <hr>
             <span>ЦІНА, ГРН</span>
             <div>
+                <div id="range_labels">
+                  <label for="range" id="range-label">0</label>
+                  <label for="range" id="max-range-label">0</label>
+                </div>
                 <input type="range" id="price-range" name="range"
                 min="0" max="50000" value="0" onchange="FilterPrice()" oninput="ChangeLabel()">
-                <label for="range" id="range-label">0</label>
+               
+               
             </div>
             <hr>
             <div>
@@ -47,27 +52,7 @@
               <h2 class="model">AMG GT</h2>
               <div class="size">
                 <h3>Price: </h3>
-                <span class="price">25000 $</span>
-              </div>
-              <div class="color">
-                <h3>Transmission: </h3>
-                <span class="typeTransmission">Auto</span>
-              </div>
-              <a href="#">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="container"> 
-          <div class="card">
-            <div class="imgBx">
-              <img src="mercedes-amg-gt.png">
-            </div>
-            <div class="contentBx">
-              <h1 class="car-manufacture">Mercedes</h1>
-              <h2 class="model">AMG GT</h2>
-              <div class="size">
-                <h3>Price: </h3>
-                <span class="price">25000 $</span>
+                <span class="price">25000</span>
               </div>
               <div class="color">
                 <h3>Transmission: </h3>
@@ -88,7 +73,7 @@
               <h2 class="model">AMG GT</h2>
               <div class="size">
                 <h3>Price: </h3>
-                <span class="price">25000 $</span>
+                <span class="price">25000</span>
               </div>
               <div class="color">
                 <h3>Transmission: </h3>
@@ -109,7 +94,28 @@
               <h2 class="model">AMG GT</h2>
               <div class="size">
                 <h3>Price: </h3>
-                <span class="price">25000 $</span>
+                <span class="price">25000</span>
+              </div>
+              <div class="color">
+                <h3>Transmission: </h3>
+                <span class="typeTransmission">Auto</span>
+              </div>
+              <a href="#">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container"> 
+          <div class="card">
+            <div class="imgBx">
+              <img src="mercedes-amg-gt.png">
+            </div>
+            <div class="contentBx">
+              <h1 class="car-manufacture">Mercedes</h1>
+              <h2 class="model">AMG GT</h2>
+              <div class="size">
+                <h3>Price: </h3>
+                <span class="price">25000</span>
               </div>
               <div class="color">
                 <h3>Transmission: </h3>
@@ -130,7 +136,7 @@
               <h2 class="model">AMG GT3</h2>
               <div class="size">
                 <h3>Price: </h3>
-                <span class="price">25000 $</span>
+                <span class="price">25000</span>
               </div>
               <div class="color">
                 <h3>Transmission: </h3>
@@ -140,6 +146,7 @@
             </div>
           </div>
         </div>
+
         <div class="container"> 
           <div class="card">
             <div class="imgBx">
@@ -150,7 +157,7 @@
               <h2 class="model">AMG GT2</h2>
               <div class="size">
                 <h3>Price: </h3>
-                <span class="price">25000$</span>
+                <span class="price">25000</span>
               </div>
               <div class="color">
                 <h3>Transmission: </h3>

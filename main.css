@@ -27,3 +27,12 @@
     column-gap: 3rem;
     row-gap: 3rem;
 }
+
+#price-range , #range_labels{
+    width: 80%;
+    margin-left: 10%;
+}
+#range_labels{
+    display: flex;
+    justify-content: space-between;
+}
